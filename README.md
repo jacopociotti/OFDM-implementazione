@@ -1,2 +1,13 @@
-# OFDM-implementazione
-Implementazione e Analisi di un Sistema di Trasmissione OFDM, con stima di canale tramite Toni Pilota.
+# Implementazione di un sistema OFDM con stima di canale tramite toni pilota
+
+
+## Features
+- OFDM transmitter and receiver
+- Channel estimation with pilot tones
+- BER performance evaluation
+
+## Tools
+- MATLAB
+
+## Author
+Jacopo Ciotti

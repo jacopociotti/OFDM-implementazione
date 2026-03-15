@@ -6,7 +6,7 @@ Questo progetto presenta l'implementazione e l'analisi in ambiente MATLAB di una
 ## ⚙️ Architettura del Sistema
 Il codice simula tutti gli stadi fondamentali di un sistema di comunicazione digitale:
 
-* **Trasmettitore (TX)**: Genera un segnale OFDM su 64 sottoportanti. I dati binari vengono generati casualmente (PN Sequence) e mappati su una costellazione QPSK. Vengono inseriti periodicamente simboli noti (piloti) con valore $p=1+j$. La trasformazione nel dominio del tempo avviene tramite IFFT.
+* **Trasmettitore (TX)**: Genera un segnale OFDM su 64 sottoportanti. I dati binari vengono generati casualmente (PN Sequence) e mappati su una costellazione QPSK. Vengono inseriti periodicamente simboli noti (piloti) con valore `p=1+j`. La trasformazione nel dominio del tempo avviene tramite IFFT.
 * **Canale**: Viene simulato un canale wireless affetto da fading di Rayleigh (multipath) e rumore additivo gaussiano bianco (AWGN). La propagazione viene modellata matematicamente tramite una convoluzione circolare, che simula implicitamente la presenza di un Prefisso Ciclico (CP).
 * **Ricevitore (RX)**: Riporta il segnale nel dominio della frequenza tramite FFT. Estrae i toni pilota, stima la risposta del canale in quei punti specifici ($\hat{H}_{pilota}$) e ricostruisce l'intera banda tramite interpolazione. 
 * **Equalizzazione e Decodifica**: Applica un equalizzatore per compensare le alterazioni di fase e ampiezza dividendo il segnale ricevuto per la stima del canale: $\hat{X}[k]=\frac{Y[k]}{\hat{H}[k]}$. Infine, un decisore a soglia Maximum Likelihood recupera i bit originali calcolando il Bit Error Rate (BER).
